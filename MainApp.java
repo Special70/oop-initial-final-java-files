@@ -1,14 +1,17 @@
 // MainApp class
 
+import utils.SystemFunctions;
+
 import java.util.Scanner;
 
-public class MainApp {
+public class MainApp implements SystemFunctions {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         char userChoice;
 
         do {
-            System.out.println("\nS   Supplier");
+            SystemFunctions.clearConsole();
+            System.out.println("S   Supplier");
             System.out.println("B   Buyer");
             System.out.println("E   Exit");
             System.out.print("Are you a supplier or a buyer? [S/B] = ");
@@ -28,7 +31,8 @@ public class MainApp {
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");
+                    SystemFunctions.delay(1);
             }
-        } while (userChoice != 'E' && userChoice != 'e');
+        } while (userChoice != 'E');
     }
 }
