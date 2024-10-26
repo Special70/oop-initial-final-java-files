@@ -1,6 +1,9 @@
 package utils;
 
 public class SystemVariables {
+    // The reason why enum constants are used to specify menus in the program
+    // is to be able to change all occurences of it if ever there are changes
+    // in plans.
     public static enum MenuConstants {
         FrontMenu,
         RoleSelection,
@@ -17,6 +20,5 @@ public class SystemVariables {
     // FROM THE CURRENT MENU.
     public static MenuConstants currentMenu = MenuConstants.FrontMenu;
     
-    // Only the SystemCore.java needs information about this (Needs investigation if it can work even without the static keyword)
     public static boolean isProgramRunning = true;
 }

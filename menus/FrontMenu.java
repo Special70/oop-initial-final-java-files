@@ -8,6 +8,7 @@ import utils.SystemVariables.MenuConstants;
 public class FrontMenu {
     private static Scanner scanner = new Scanner(System.in);
     public static void openMenu() {
+        // Locks the user in an infinite loop. use the return keyword to exit
         while (true) {
             SystemFunctions.clearConsole();
             System.out.println("=================================\r\n" + //
@@ -21,7 +22,6 @@ public class FrontMenu {
             switch (userInput) {
                 case "1": {
                     SystemFunctions.changeMenu(MenuConstants.RoleSelection);
-                    System.out.println("Reached");
                     return;
                     
                 }
@@ -31,6 +31,11 @@ public class FrontMenu {
                                                 "Terminating...");
                     SystemFunctions.delay(1);
                     return;
+                }
+                default: {
+                    System.out.println("Invalid input. Please try again");
+                    SystemFunctions.delay(1);
+                    continue;
                 }
             }
         }

@@ -19,7 +19,7 @@ public class AddSupply_Supplier extends DisplayFunctions{
         String[][] variantDetails;
 
         
-        if (SupplierData.firstName == null) {
+        if (SupplierData.dataObj.getFirstName() == null) {
             FormFiller_Supplier.openMenu();
         }
 
@@ -121,7 +121,7 @@ public class AddSupply_Supplier extends DisplayFunctions{
                 System.out.println("Thank you for supplying at DL Auto Care!");
 
                 // Adding record:
-                SupplierData.records.add(new String[]{String.valueOf(amount), model, variant});
+                SupplierData.dataObj.records.add(new String[]{String.valueOf(amount), model, variant});
 
                 SystemFunctions.changeMenu(MenuConstants.RoleSelection);
                 SystemFunctions.delay(1);

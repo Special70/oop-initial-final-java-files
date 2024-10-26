@@ -7,7 +7,7 @@ public class FormFiller_Supplier extends FormFiller{
     public static void openMenu() {
 
         String[] details = FormFiller.fillFormSupplier();
-        SupplierData.fillDetails(details[0], details[1], details[2]);
+        SupplierData.dataObj.fillDetails(details[0], details[1], details[2]);
         
     }
 }
