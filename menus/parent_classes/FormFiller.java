@@ -41,7 +41,7 @@ public class FormFiller {
                 continue;
             }
         
-            SupplierData.fillDetails(firstName, lastName, contactNumber);
+            SupplierData.dataObj.fillDetails(firstName, lastName, contactNumber);
             System.out.println("Done filling in data");
             SystemFunctions.delay(1);
             // Exit program
@@ -93,7 +93,7 @@ public class FormFiller {
                 continue;
             }
         
-            BuyerData.fillDetails(firstName, lastName, contactNumber, address);
+            BuyerData.dataObj.fillDetails(firstName, lastName, contactNumber, address);
             System.out.println("Done filling in data");
             SystemFunctions.delay(1);
             // Exit program

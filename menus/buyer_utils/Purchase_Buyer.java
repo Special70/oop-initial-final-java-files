@@ -15,7 +15,7 @@ public class Purchase_Buyer extends DisplayFunctions {
     private static Scanner scanner = new Scanner(System.in);
     public static void openMenu() {
 
-        if (BuyerData.firstName == null) {
+        if (BuyerData.dataObj.getFirstName() == null) {
             FormFiller_Buyer.openMenu();
         }
         
@@ -186,14 +186,14 @@ public class Purchase_Buyer extends DisplayFunctions {
             // Printing Receipt
             SystemFunctions.clearConsole();
             System.out.println("BUYER'S RECEIPT");
-            System.out.println("Name: "+BuyerData.firstName+" "+BuyerData.lastName);
-            System.out.println("Contact Number: "+BuyerData.contactNumber);
-            System.out.println("Address: "+BuyerData.address);
+            System.out.println("Name: "+BuyerData.dataObj.getFirstName()+" "+BuyerData.dataObj.getLastName());
+            System.out.println("Contact Number: "+BuyerData.dataObj.getContactNumber());
+            System.out.println("Address: "+BuyerData.dataObj.getAddress());
             System.out.println("Model Purchased: "+VehicleModelData.getModelFullName(model));
             System.out.println("Variant Purchased: "+VehicleModelData.getVariant(model, Integer.parseInt(variant)));
             System.out.println("Total Cost: P "+String.format("%,.2f", totalCost));
             System.out.println("Your Payment: P "+String.format("%,.2f", payment));
-            System.out.println("Change: "+String.format("%,.2f", payment-totalCost));
+            System.out.println("Change: P "+String.format("%,.2f", payment-totalCost));
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm:ss");  
             LocalDateTime now = LocalDateTime.now();  

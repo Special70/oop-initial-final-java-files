@@ -14,7 +14,7 @@ public class CheckSupply_Supplier{
         System.out.println("====================================================\r\n" + //
                            "| QUANTITY  | MODEL               | VARIANT        |\r");
                            
-        for (String[] supplyDetails : SupplierData.records) {
+        for (String[] supplyDetails : SupplierData.dataObj.records) {
             System.out.print("| "+supplyDetails[0]+" ".repeat(10-String.valueOf(supplyDetails[0]).length())); // For displaying amount
             System.out.print("| "+VehicleModelData.getModelFullName(supplyDetails[1])+" ".repeat(20-VehicleModelData.getModelFullName(supplyDetails[1]).length())); // For displaying model name
             System.out.print("| "+VehicleModelData.getVariant(supplyDetails[1], Integer.parseInt(supplyDetails[2]))+" ".repeat(15-VehicleModelData.getVariant(supplyDetails[1], Integer.parseInt(supplyDetails[2])).length())+"|"); // For displaying model variant
