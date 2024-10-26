@@ -21,11 +21,13 @@ public class FrontMenu {
             String userInput = scanner.nextLine().trim();
             switch (userInput) {
                 case "1": {
+                    // Navigate to role selection menu
                     SystemFunctions.changeMenu(MenuConstants.RoleSelection);
                     return;
                     
                 }
                 case "2": {
+                    // Shut down the program
                     SystemFunctions.shutDownProgram();
                     System.out.println("Thank you for visiting at DL Auto Care!\r\n" + //
                                                 "Terminating...");
@@ -33,6 +35,7 @@ public class FrontMenu {
                     return;
                 }
                 default: {
+                    // Handle invalid input
                     System.out.println("Invalid input. Please try again");
                     SystemFunctions.delay(1);
                     continue;
